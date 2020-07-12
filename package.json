@@ -1,0 +1,51 @@
+{
+	"name": "customizing-code-frame",
+	"version": "1.0.0",
+	"description": "A small library for displaying code frames",
+	"main": "dist/code-frame.js",
+	"module": "dist/code-frame.module.js",
+	"types": "dist/types/index.d.ts",
+	"source": "src/index.ts",
+	"scripts": {
+		"test": "mochette 'tests/*.test.ts'",
+		"build": "rimraf dist/ && microbundle build --raw --no-compress && cp dist/code-frame.modern.js dist/code-frame.modern.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mikeludemann/customizing-code-frame.git"
+	},
+	"keywords": [
+		"Code Frames"
+	],
+	"author": "Mike Ludemann",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mikeludemann/customizing-code-frame/issues"
+	},
+	"homepage": "https://github.com/mikeludemann/customizing-code-frame#readme",
+	"dependencies": {
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.22",
+		"microbundle": "^0.12.2",
+		"mochette": "^1.0.0",
+		"rimraf": "^3.0.2",
+		"ts-node": "^8.10.2",
+		"typescript": "^3.9.6"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/code-frame.modern.mjs",
+			"require": "./dist/code-frame.js"
+		},
+		"./package.json": "./package.json",
+		"./": "./"
+	},
+	"files": [
+		"dist/"
+	],
+	"prettier": {
+		"useTabs": true,
+		"singleQuote": true,
+		"arrowParens": "avoid"
+	}
+}
